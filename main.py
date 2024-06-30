@@ -4,18 +4,18 @@ import cv2
 capture = cv2.VideoCapture(0)
 
 if not capture.isOpened():
-    print("Nie można otworzyć kamery")
+    print("cant open cam")
     exit()
 
 while True:
     ret, frame = capture.read()
     
     if not ret:
-        print("Nie można odczytać klatki")
+        print("cant read frame")
         continue
     
     if frame is None or frame.shape[0] == 0 or frame.shape[1] == 0:
-        print("Klatka ma nieprawidłowe wymiary")
+        print("frame is bad dimension")
         continue
 
     cv2.imshow("VideoFrame", frame)
