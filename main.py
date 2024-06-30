@@ -24,7 +24,7 @@ while True:
     # detect face
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(
-        gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30)
+        gray, scaleFactor=1.1, minNeighbors=5, minSize=(50, 50), maxSize=(300, 300)
     )
 
     # Print detected faces for debugging
@@ -42,7 +42,7 @@ while True:
         continue
 
     cv2.imshow("VideoFrame", frame)
-    cv2.imshow("GrayFrame", gray)
+    # cv2.imshow("GrayFrame", gray)
 
     # Break the loop on ESC key press
     if cv2.waitKey(50) & 0xFF == 27:
