@@ -3,7 +3,7 @@ import cv2
 
 # write model CascadeClassifier
 face_cascade = cv2.CascadeClassifier(
-     "haarcascades/haarcascade_frontalface_default.xml"
+    cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
 )
 if face_cascade.empty():
     print("Could not load cascade classifier")
@@ -24,7 +24,7 @@ while True:
     # detect face
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(
-        gray, scaleFactor=1.2, minNeighbors=5, maxSize=(50, 50)
+        gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30)
     )
 
     # Print detected faces for debugging
