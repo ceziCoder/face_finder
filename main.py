@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import cv2
+# Wczytaj wytrenowany model CascadeClassifier
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 capture = cv2.VideoCapture(0)
 
